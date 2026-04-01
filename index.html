@@ -1,1 +1,243 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lighthouse reports dashboard</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+      --accent: #3b82f6;
+      --good: #22c55e;
+      --mid: #eab308;
+      --bad: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.25rem; }
+    .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    nav.tier-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    nav.tier-nav a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav.tier-nav a:hover { text-decoration: underline; }
+    nav.tier-nav a.active { color: var(--text); font-weight: 600; pointer-events: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.15s;
+    }
+    a.card-wrap {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    a.card-wrap:hover .card {
+      border-color: rgba(59, 130, 246, 0.45);
+    }
+    .card .n {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .card .lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    .card.g95 .n { color: var(--good); }
+    .card.g90 .n { color: var(--mid); }
+    .card.low .n { color: var(--bad); }
+    .card.na .n { color: var(--muted); }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+    }
+    li:last-child { border-bottom: none; }
+    ul a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    ul a:hover { text-decoration: underline; }
+    .score {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+</style>
+</head>
+<body>
+  <h1>Lighthouse dashboard</h1>
+  <p class="sub">Performance score (mobile). 93 report(s). Generated 2026-04-01T16:37:49.599Z.</p>
+  <nav class="tier-nav" aria-label="Score tiers">
+    <a href="index.html" class="active">Overview</a>
+    <a href="dashboard-95-plus.html">95+</a>
+    <a href="dashboard-90-94.html">90–94</a>
+    <a href="dashboard-below-90.html">Below 90</a>
+    <a href="dashboard-no-score.html">No score</a>
+  </nav>
+  <p class="sub">Click a card to open only that tier.</p>
+  <div class="grid">
+    <a class="card-wrap" href="dashboard-95-plus.html">
+      <div class="card g95">
+        <div class="n">84</div>
+        <div class="lbl">95+</div>
+      </div>
+    </a>
+    <a class="card-wrap" href="dashboard-90-94.html">
+      <div class="card g90">
+        <div class="n">6</div>
+        <div class="lbl">90–94</div>
+      </div>
+    </a>
+    <a class="card-wrap" href="dashboard-below-90.html">
+      <div class="card low">
+        <div class="n">3</div>
+        <div class="lbl">Below 90</div>
+      </div>
+    </a>
+    <a class="card-wrap" href="dashboard-no-score.html">
+      <div class="card na">
+        <div class="n">0</div>
+        <div class="lbl">No score</div>
+      </div>
+    </a>
+  </div>
+  <h2>All reports</h2>
+  <ul>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_coffee_press.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/coffee-press</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_cold_brew.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/cold-brew</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_pour_over.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/pour-over</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_siphon.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/siphon</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_stovetop.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/stovetop</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_brew_guides_whiskey_barrel_aged_cold_brew.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/brew-guides/whiskey-barrel-aged-cold-brew</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_brewed_pour_over_espresso.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/brewed-pour-over-espresso</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_chicago_roastery_microblend.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/chicago-roastery-microblend</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_colombia_el_rancho_pink_bourbon.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/colombia-el-rancho-pink-bourbon</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_costa_rica_hacienda_alsacia.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/costa-rica-hacienda-alsacia</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_decaffeinated_costa_rica_hacienda_alsacia.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/decaffeinated-costa-rica-hacienda-alsacia</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_empire_state_building_r_microblend.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/empire-state-building-r-microblend</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_galapagos_la_tortuga_2.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/galapagos-la-tortuga-2</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_hawaii_kona_peaberry_coffee.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/hawaii-kona-peaberry-coffee</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_honduras_cafico_2.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/honduras-cafico-2</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_honey_process_ecuador_loja.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/honey-process-ecuador-loja</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_indonesia_west_java_jamuju.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/indonesia-west-java-jamuju</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_microblend_no_10.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/microblend-no-10</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_new_york_roastery_microblend.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/new-york-roastery-microblend</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_seattle_roastery_microblend.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/seattle-roastery-microblend</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_sun_dried_brazil_fazenda_recanto.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/sun-dried-brazil-fazenda-recanto</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_chicago_book_an_event.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/chicago/book-an-event</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_empire_state_building.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/empire-state-building</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_explorebylevel.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/explorebylevel</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_new_york_book_an_event.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/new-york/book-an-event</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_tokyo_highlights.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/tokyo/highlights</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_chicago_roastery_experiential_coffee_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/chicago-roastery-experiential-coffee-bar-menu</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_new_york_roastery_experience_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/new-york-roastery-experience-bar-menu</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_breakfast.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/breakfast</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_other_beverages.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/other-beverages</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_snacks.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/snacks</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_sweets.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/sweets</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_site_map.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/site-map</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_exclusive_artist_collection_melissa_koby.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/exclusive-artist-collection-melissa-koby</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_exclusive_artist_collection_stevie_shao.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/exclusive-artist-collection-stevie-shao</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_reserve_coffee_cards.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/reserve-coffee-cards</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_seattle_10th_anniversary_collection_kyler_martz.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/seattle-10th-anniversary-collection-kyler-martz</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_welcome_to_hacienda_alsacia_starbucks_coffee_farm.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/welcome-to-hacienda-alsacia-starbucks-coffee-farm</a> <span class="score">Performance: 100</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_rwanda_sholi_kundwa_2.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/rwanda-sholi-kundwa-2</a> <span class="score">Performance: 99</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_menus.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/menus</a> <span class="score">Performance: 99</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_visit.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/visit</a> <span class="score">Performance: 99</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_tokyo_roastery.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/tokyo-roastery</a> <span class="score">Performance: 99</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_cocktails_wine_beer.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/cocktails-wine-beer</a> <span class="score">Performance: 99</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_indonesia_west_java.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/indonesia-west-java</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_starbucks_reserve_r_christmas_2024.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/starbucks-reserve-r-christmas-2024</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_bookanevent.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/bookanevent</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_bookexperiencetickets.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/bookexperiencetickets</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_esb_cocktail_lounge.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/esb/cocktail-lounge</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_new_york_roastery_arriviamo_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/new-york-roastery-arriviamo-menu</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_our_coffee.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/our-coffee</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_our_coffee_coffee_archive.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/our-coffee/coffee-archive</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_coffee.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/coffee</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_art_of_the_pour.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/art-of-the-pour</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_chicago_5th_anniversary_collection_mac_blackout.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/chicago-5th-anniversary-collection-mac-blackout</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_extraordinary_women_rwanda.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/extraordinary-women-rwanda</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_febrewary_at_starbucks_reserve.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/febrewary-at-starbucks-reserve</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_origin_yunnan.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/origin-yunnan</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_the_starbucks_reserve_empire_state_building_store.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/the-starbucks-reserve-empire-state-building-store</a> <span class="score">Performance: 98</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_find_a_location.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/find-a-location</a> <span class="score">Performance: 97</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_microblend_no_21.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/microblend-no-21</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_starbucks_reserve_r_christmas_blend_2025.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/starbucks-reserve-r-christmas-blend-2025</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_starbucks_reserve_r_knobcreek_r_bourbon_whiskey_barrel_aged_guatemala.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/starbucks-reserve-r-knobcreek-r-bourbon-whiskey-barrel-aged-guatemala</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_chicago_highlights.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/chicago/highlights</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_chicago_roastery.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/chicago-roastery</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_new_york_highlights.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/new-york/highlights</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_new_york_roastery.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/new-york-roastery</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_chicago_roastery_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/chicago-roastery-bar-menu</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_empire_state_building_cocktail_coffee_lounge_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/empire-state-building-cocktail-coffee-lounge-menu</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_empire_state_building_tasting_room_experiences_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/empire-state-building-tasting-room-experiences-menu</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_new_york_roastery_main_coffee_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/new-york-roastery-main-coffee-bar-menu</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_building_schools.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/building-schools</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_coffee_starts_here.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/coffee-starts-here</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_destination_pumpkin_spice_empire_state_building.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/destination-pumpkin-spice-empire-state-building</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_exclusive_artist_collection_dana_tanamachi.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/exclusive-artist-collection-dana-tanamachi</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_farm_to_filter.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/farm-to-filter</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_frequently_asked_questions_faqs.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/frequently-asked-questions-faqs</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_handpicked_at_the_roastery.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/handpicked-at-the-roastery</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_hello_shanghai.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/hello-shanghai</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_private_events.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/private-events</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_psl_bouquet.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/psl-bouquet</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_say_it_with_coffee_how_we_give_back.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/say-it-with-coffee-how-we-give-back</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_stories_starbucksrewards.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/stories/starbucksrewards</a> <span class="score">Performance: 96</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_coffee_vietnam_dung_kno.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/coffee/vietnam-dung-kno</a> <span class="score">Performance: 95</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_chicago_roastery_starbucks_reserve_cafe_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/chicago-roastery-starbucks-reserve-cafe-menu</a> <span class="score">Performance: 94</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_product_categories_coffee_creations.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/product-categories/coffee-creations</a> <span class="score">Performance: 94</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_about.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/about</a> <span class="score">Performance: 93</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_locations_shanghai_roastery.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/locations/shanghai-roastery</a> <span class="score">Performance: 92</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus</a> <span class="score">Performance: 92</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_visit_us.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/visit-us</a> <span class="score">Performance: 91</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_chicago_roastery_arriviamo_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/chicago-roastery-arriviamo-bar-menu</a> <span class="score">Performance: 87</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_book_a_signature_experience.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/book-a-signature-experience</a> <span class="score">Performance: 81</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/</a> <span class="score">Performance: 77</span></li>
+  </ul>
+</body>
+</html>

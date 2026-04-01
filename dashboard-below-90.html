@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Performance below 90 — Lighthouse</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+      --accent: #3b82f6;
+      --good: #22c55e;
+      --mid: #eab308;
+      --bad: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 2rem clamp(1rem, 4vw, 3rem);
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.25rem; }
+    .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    nav.tier-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    nav.tier-nav a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    nav.tier-nav a:hover { text-decoration: underline; }
+    nav.tier-nav a.active { color: var(--text); font-weight: 600; pointer-events: none; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.15s;
+    }
+    a.card-wrap {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    a.card-wrap:hover .card {
+      border-color: rgba(59, 130, 246, 0.45);
+    }
+    .card .n {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .card .lbl { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    .card.g95 .n { color: var(--good); }
+    .card.g90 .n { color: var(--mid); }
+    .card.low .n { color: var(--bad); }
+    .card.na .n { color: var(--muted); }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+    }
+    li:last-child { border-bottom: none; }
+    ul a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    ul a:hover { text-decoration: underline; }
+    .score {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+</style>
+</head>
+<body>
+  <h1>Performance below 90</h1>
+  <p class="sub">3 page(s). Generated 2026-04-01T16:37:49.599Z.</p>
+  <nav class="tier-nav" aria-label="Score tiers">
+    <a href="index.html">Overview</a>
+    <a href="dashboard-95-plus.html">95+</a>
+    <a href="dashboard-90-94.html">90–94</a>
+    <a href="dashboard-below-90.html" class="active">Below 90</a>
+    <a href="dashboard-no-score.html">No score</a>
+  </nav>
+  <ul>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_menus_chicago_roastery_arriviamo_bar_menu.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/menus/chicago-roastery-arriviamo-bar-menu</a> <span class="score">Performance: 87</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_book_a_signature_experience.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/book-a-signature-experience</a> <span class="score">Performance: 81</span></li>
+    <li><a href="reports/https___main__starbucks_reserve__sbux_github_copilot_aem_live_.html">https://main--starbucks-reserve--sbux-github-copilot.aem.live/</a> <span class="score">Performance: 77</span></li>
+  </ul>
+</body>
+</html>
